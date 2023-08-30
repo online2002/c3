@@ -3,5 +3,5 @@ Chandrayaan 3 TDD Assessment
 
 # my approach
 
-![Image 1](ap1.jpg)
-![Image 2](ap2.jpg)
+<img src="ap1.jpg" alt="drawing" width="200"/>
+<img src="ap2.jpg" alt="drawing" width="200"/>
