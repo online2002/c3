@@ -1,3 +1,7 @@
+/*
+I only required one commit because i have clear approach,
+it was fun experience.
+*/
 import java.util.HashMap;
 
 public class Chandrayaan3 {
@@ -5,7 +9,7 @@ public class Chandrayaan3 {
   private static final HashMap<String, int[]> DIRECTIONS = new HashMap<>();
 
   static {
-//I am using DIRECTIONS.put() to store the mapping from commands to directions.
+    //using DIRECTIONS.put() to store the mapping from commands to directions.
     DIRECTIONS.put("f", new int[]{1, 0, 0});
     DIRECTIONS.put("b", new int[]{-1, 0, 0});
     DIRECTIONS.put("l", new int[]{0, -1, 0});
@@ -15,6 +19,7 @@ public class Chandrayaan3 {
   }
 
   public static void moveCraft(Spacecraft craft, String command) {
+    //changing co-ordinates...
     int[] direction = DIRECTIONS.get(command);
     craft.x += direction[0];
     craft.y += direction[1];
@@ -22,11 +27,13 @@ public class Chandrayaan3 {
   }
 
   public static void turnCraft(Spacecraft craft, String command) {
+    //repeating same direction by reminder of 4...
     int[] direction = DIRECTIONS.get(command);
     craft.direction = (craft.direction + 1) % 4;
   }
 
   public static void executeCommands(Spacecraft craft, String[] commands) {
+    //executing each command in for loop...
     for (String command : commands) {
       moveCraft(craft, command);
       turnCraft(craft, command);
@@ -35,6 +42,7 @@ public class Chandrayaan3 {
 
   @Test
   public void testMoveCraft() {
+    //basic object initialization...
     Spacecraft craft = new Spacecraft();
     craft.x = 0;
     craft.y = 0;
@@ -98,7 +106,7 @@ class Spacecraft {
     this.z = z;
     this.direction = direction;
   }
-
+  //output...
   @Override
   public String toString() {
     return String.format("(x=%d, y=%d, z=%d, direction=%d)", x, y, z, direction);
